@@ -2,6 +2,7 @@ package com.ecommerce.microcommerce.web.controller;
 
 import com.ecommerce.microcommerce.dao.ProductDao;
 import com.ecommerce.microcommerce.model.Product;
+import com.ecommerce.microcommerce.web.exceptions.ProduitGratuitException;
 import com.ecommerce.microcommerce.web.exceptions.ProduitIntrouvableException;
 import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
@@ -68,8 +69,9 @@ public class ProductController {
 
     //ajouter un produit
     @PostMapping(value = "/Produits")
-
     public ResponseEntity<Void> ajouterProduit(@Valid @RequestBody Product product) {
+
+        if(product.getPrix()==0) throw new ProduitGratuitException("Le prix du produit est égal à zéro");
 
         Product productAdded =  productDao.save(product);
 
@@ -92,9 +94,27 @@ public class ProductController {
     }
 
     @PutMapping (value = "/Produits")
-    public void updateProduit(@RequestBody Product product) {
+    public ResponseEntity<Void> updateProduit(@RequestBody Product product) {
 
-        productDao.save(product);
+        Product produit = productDao.findById(product.getId());
+
+        if(produit==null) throw new ProduitIntrouvableException("Le produit avec l'id " + product.getId() + " est INTROUVABLE.");
+
+
+        if(product.getPrix()==0) throw new ProduitGratuitException("Le prix du produit est égal à zéro");
+
+        Product productAdded =  productDao.save(product);
+
+        if (productAdded == null)
+            return ResponseEntity.noContent().build();
+
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(productAdded.getId())
+                .toUri();
+
+        return ResponseEntity.created(location).build();
     }
 
 
@@ -126,8 +146,5 @@ public class ProductController {
         return productDao.findAllWithCustomOrderBy(new Sort("nom"));
 
     }
-
-
-
 
 }
