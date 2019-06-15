@@ -8,19 +8,15 @@ import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.persistence.Entity;
 import javax.validation.Valid;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -123,5 +119,15 @@ public class ProductController {
         return map;
 
     }
+
+    @GetMapping(value = "/AdminProduits/trierProduitsParOrdreAlphabetique")
+    public List<Product> trierProduitsParOrdreAlphabetique() {
+
+        return productDao.findAllWithCustomOrderBy(new Sort("nom"));
+
+    }
+
+
+
 
 }
