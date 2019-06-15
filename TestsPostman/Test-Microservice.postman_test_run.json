@@ -1,0 +1,328 @@
+{
+	"id": "ba313631-7a5d-438b-b888-dc87d84e8923",
+	"name": "Test-Microservice",
+	"allTests": [],
+	"timestamp": "2019-06-15T12:41:18.043Z",
+	"collection_id": "ab2610d2-bd62-4c2b-969c-180c01f54285",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "ab2610d2-bd62-4c2b-969c-180c01f54285",
+		"name": "Test-Microservice",
+		"description": "",
+		"auth": null,
+		"events": null,
+		"variables": [],
+		"order": [
+			"52859b48-de44-4082-b735-fe1dd0482d45",
+			"15eccae6-a109-403d-8394-558bc742c9ac",
+			"f8a432ec-102f-42e4-aef5-19da8d83b9ab",
+			"9211a3c1-4bc9-4771-bb2d-5da5a18c9be7",
+			"c69b4f63-62ce-4477-9afc-1d2266256f5d",
+			"0291812d-625f-4daf-aed1-28ee0d8161b5",
+			"5dc5c8be-47ff-41fa-b9bd-5ebc098e596f"
+		],
+		"folders_order": [],
+		"owner": "7798353",
+		"favorite": false,
+		"isFavorite": true,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"name": "ajouter un nouveau produit",
+			"id": "52859b48-de44-4082-b735-fe1dd0482d45",
+			"url": "http://localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": {
+					"name": "Created",
+					"detail": "The request has been fulfilled and resulted in a new resource being created."
+				}
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				"11"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "11",
+			"totalRequestTime": "11",
+			"iterationResults": {}
+		},
+		{
+			"name": "ajouter un nouveau produit, prix égale à 0",
+			"id": "15eccae6-a109-403d-8394-558bc742c9ac",
+			"url": "http://localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": {
+					"name": "Forbidden",
+					"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+				}
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				"7"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "7",
+			"totalRequestTime": "7",
+			"iterationResults": {}
+		},
+		{
+			"name": "Modification d'un produit,",
+			"id": "f8a432ec-102f-42e4-aef5-19da8d83b9ab",
+			"url": "http://localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": {
+					"name": "Created",
+					"detail": "The request has been fulfilled and resulted in a new resource being created."
+				}
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				"9"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "9",
+			"totalRequestTime": "9",
+			"iterationResults": {}
+		},
+		{
+			"name": "Modification d'un produit, prix égale à 0",
+			"id": "9211a3c1-4bc9-4771-bb2d-5da5a18c9be7",
+			"url": "http://localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": {
+					"name": "Forbidden",
+					"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+				}
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				"8"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "8",
+			"totalRequestTime": "8",
+			"iterationResults": {}
+		},
+		{
+			"name": "Modification d'un produit, id inexistant",
+			"id": "c69b4f63-62ce-4477-9afc-1d2266256f5d",
+			"url": "http://localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				"9"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "9",
+			"totalRequestTime": "9",
+			"iterationResults": {}
+		},
+		{
+			"name": "Tri par ordre alphabétique",
+			"id": "0291812d-625f-4daf-aed1-28ee0d8161b5",
+			"url": "http://localhost:9090/AdminProduits/trierProduitsParOrdreAlphabetique",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				"10"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "10",
+			"totalRequestTime": "10",
+			"iterationResults": {}
+		},
+		{
+			"name": "Affichage de la marge",
+			"id": "5dc5c8be-47ff-41fa-b9bd-5ebc098e596f",
+			"url": "http://localhost:9090/AdminProduits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				"10"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "10",
+			"totalRequestTime": "10",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 0,
+	"totalFail": 0,
+	"totalTime": 64,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "ajouter un nouveau produit",
+			"id": "52859b48-de44-4082-b735-fe1dd0482d45",
+			"url": "http://localhost:9090/Produits",
+			"time": "2019-06-15T12:41:18.043Z",
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": {
+					"name": "Created",
+					"detail": "The request has been fulfilled and resulted in a new resource being created."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "ajouter un nouveau produit, prix égale à 0",
+			"id": "15eccae6-a109-403d-8394-558bc742c9ac",
+			"url": "http://localhost:9090/Produits",
+			"time": "2019-06-15T12:41:18.043Z",
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": {
+					"name": "Forbidden",
+					"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "Modification d'un produit,",
+			"id": "f8a432ec-102f-42e4-aef5-19da8d83b9ab",
+			"url": "http://localhost:9090/Produits",
+			"time": "2019-06-15T12:41:18.043Z",
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": {
+					"name": "Created",
+					"detail": "The request has been fulfilled and resulted in a new resource being created."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "Modification d'un produit, prix égale à 0",
+			"id": "9211a3c1-4bc9-4771-bb2d-5da5a18c9be7",
+			"url": "http://localhost:9090/Produits",
+			"time": "2019-06-15T12:41:18.043Z",
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden",
+				"detail": {
+					"name": "Forbidden",
+					"detail": "The request was a legal request, but the server is refusing to respond to it. Unlike a 401 Unauthorized response, authenticating will make no difference."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "Modification d'un produit, id inexistant",
+			"id": "c69b4f63-62ce-4477-9afc-1d2266256f5d",
+			"url": "http://localhost:9090/Produits",
+			"time": "2019-06-15T12:41:18.043Z",
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found",
+				"detail": {
+					"name": "Not Found",
+					"detail": "The requested resource could not be found but may be available again in the future. Subsequent requests by the client are permissible."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "Tri par ordre alphabétique",
+			"id": "0291812d-625f-4daf-aed1-28ee0d8161b5",
+			"url": "http://localhost:9090/AdminProduits/trierProduitsParOrdreAlphabetique",
+			"time": "2019-06-15T12:41:18.043Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "Affichage de la marge",
+			"id": "5dc5c8be-47ff-41fa-b9bd-5ebc098e596f",
+			"url": "http://localhost:9090/AdminProduits",
+			"time": "2019-06-15T12:41:18.043Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		}
+	],
+	"synced": false
+}
